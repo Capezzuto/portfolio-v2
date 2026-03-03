@@ -1,7 +1,15 @@
 import React from 'react';
+import Header from './_components/Header';
 
 const StaticLayout = ({ children }: { children: React.ReactNode }) => {
-	return <>{children}</>;
+	return (
+		<div className='dynamic-background'>
+			<div className='max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl min-h-screen mx-auto px-4 md:px-0'>
+				<Header />
+				<main>{children}</main>
+			</div>
+		</div>
+	);
 };
 
 export default StaticLayout;
