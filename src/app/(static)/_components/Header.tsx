@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Header = () => {
 	return (
-		<header className='flex justify-between items-center'>
+		<header className='flex justify-between items-center pt-5'>
 			<div>
 				<Link href='/'>
 					<h2 className='font-(family-name:--font-fira-code) text-4xl'>Joe Capezzuto</h2>

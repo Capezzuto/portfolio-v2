@@ -1,5 +1,30 @@
 @import 'tailwindcss';
 
+/* Gradient colors */
+@property --gradient-color-a {
+	syntax: '<color>';
+	initial-value: transparent;
+	inherits: false;
+}
+
+@property --gradient-color-b {
+	syntax: '<color>';
+	initial-value: transparent;
+	inherits: false;
+}
+
+@property --gradient-color-c {
+	syntax: '<color>';
+	initial-value: transparent;
+	inherits: false;
+}
+
+@property --gradient-color-d {
+	syntax: '<color>';
+	initial-value: transparent;
+	inherits: false;
+}
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -10,6 +35,19 @@
 	--color-foreground: var(--foreground);
 	--font-sans: var(--font-roboto);
 	--font-mono: var(--font-fira-code);
+}
+
+@theme {
+	/* --color-__-100:  */
+
+	--gradient-color-a: rgba(0, 0, 0, 0);
+	--gradient-color-b: rgba(0, 0, 0, 0);
+	--gradient-color-c: rgba(0, 0, 0, 0);
+	--gradient-color-d: rgba(0, 0, 0, 0);
+
+	--dynamic-gradient-1: linear-gradient(in oklch 30deg, var(--gradient-color-a) 0%, var(--gradient-color-b) 100%);
+	--dynamic-gradient-2: linear-gradient(in oklch 270deg, var(--gradient-color-c) 0%, var(--gradient-color-d) 100%);
+	/* --ease-snappy-dot: cubic-bezier(); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +61,65 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+
+.dynamic-background {
+	--bg-trans-duration: 1000ms;
+	background-image:
+		linear-gradient(in oklch 30deg, var(--gradient-color-a) 0%, var(--gradient-color-b) 100%),
+		linear-gradient(in oklch 315deg, var(--gradient-color-c) 0%, var(--gradient-color-d) 100%);
+	background-size:
+		150% 150%,
+		150% 150%;
+	background-position:
+		0 0,
+		0 0;
+	background-repeat: no-repeat;
+	transition:
+		--gradient-color-a var(--bg-trans-duration),
+		--gradient-color-b var(--bg-trans-duration),
+		--gradient-color-c var(--bg-trans-duration),
+		--gradient-color-d var(--bg-trans-duration),
+		background-position var(--bg-trans-duration);
+}
+
+.dynamic-background:has(.home-page) {
+	--gradient-color-a: rgba(190, 149, 222, 1);
+	--gradient-color-b: rgba(255, 224, 171, 1);
+	--gradient-color-c: rgba(0, 0, 0, 0);
+	--gradient-color-d: rgba(0, 0, 0, 0);
+	background-position:
+		0% 0%,
+		0% 0%;
+}
+
+.dynamic-background:has(.about-page) {
+	--gradient-color-a: rgba(128, 128, 252, 0);
+	--gradient-color-b: rgba(128, 128, 71, 0.3);
+	--gradient-color-c: rgba(255, 209, 117, 1);
+	--gradient-color-d: rgba(212, 255, 158, 0.9);
+
+	background-position:
+		30% 50%,
+		0% 50%;
+}
+.dynamic-background:has(.cv-page) {
+	--gradient-color-a: rgba(252, 245, 169, 1);
+	--gradient-color-b: rgba(201, 224, 206, 1);
+	--gradient-color-c: rgba(128, 128, 117, 0);
+	--gradient-color-d: rgba(128, 128, 158, 0);
+
+	background-position:
+		50% 25%,
+		0% 25%;
+}
+.dynamic-background:has(.projects-page) {
+	--gradient-color-a: rgba(178, 252, 218, 0.6);
+	--gradient-color-b: rgba(188, 188, 238, 0.3);
+	--gradient-color-c: rgba(225, 242, 228, 1);
+	--gradient-color-d: rgba(232, 229, 245, 1);
+
+	background-position:
+		75% 25%,
+		50% 25%;
 }

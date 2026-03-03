@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CVPage = () => {
-	return <>CV View</>;
+	return <div className='cv-page'>CV View</div>;
 };
 
 export default CVPage;
