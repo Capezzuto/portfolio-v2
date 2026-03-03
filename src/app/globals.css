@@ -84,7 +84,7 @@ body {
 }
 
 .dynamic-background:has(.home-page) {
-	--gradient-color-a: rgba(190, 149, 222, 1);
+	--gradient-color-a: rgba(198, 129, 212, 1);
 	--gradient-color-b: rgba(255, 224, 171, 1);
 	--gradient-color-c: rgba(0, 0, 0, 0);
 	--gradient-color-d: rgba(0, 0, 0, 0);
