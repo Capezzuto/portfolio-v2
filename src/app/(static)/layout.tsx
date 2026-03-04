@@ -4,9 +4,9 @@ import Header from './_components/Header';
 const StaticLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<div className='dynamic-background'>
-			<div className='max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl min-h-screen mx-auto px-4 md:px-0'>
+			<div className='max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl min-h-screen mx-auto px-4 md:px-0 flex flex-col flex-start'>
 				<Header />
-				<main>{children}</main>
+				<main className='flex-1 flex'>{children}</main>
 			</div>
 		</div>
 	);
