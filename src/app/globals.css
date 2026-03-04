@@ -25,6 +25,20 @@
 	inherits: false;
 }
 
+@keyframes scroll-fade {
+	0% {
+		filter: blur(20px);
+		background-position-x: 100%;
+	}
+	50% {
+		filter: blur(0px);
+	}
+	100% {
+		filter: blur(0px);
+		background-position: 0%;
+	}
+}
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -84,7 +98,8 @@ body {
 }
 
 .dynamic-background:has(.home-page) {
-	--gradient-color-a: rgba(198, 129, 212, 1);
+	/* --gradient-color-a: rgba(198, 129, 212, 1); */
+	--gradient-color-a: rgba(178, 129, 152, 1);
 	--gradient-color-b: rgba(255, 224, 171, 1);
 	--gradient-color-c: rgba(0, 0, 0, 0);
 	--gradient-color-d: rgba(0, 0, 0, 0);

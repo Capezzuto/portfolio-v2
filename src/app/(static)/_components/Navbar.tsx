@@ -9,25 +9,21 @@ const tabs = [
 		id: 'home',
 		text: 'Home',
 		href: '/',
-		// rule: 'group-has-[#home:hover]:translate-x-0 group-has-[#home.active]:translate-x-0',
 	},
 	{
 		id: 'about',
 		text: 'About',
 		href: '/about',
-		// rule: 'group-has-[#about:hover]:translate-x-[4.25rem] group-has-[#about.active]:translate-x-[4.25rem]',
 	},
 	{
 		id: 'cv',
 		text: 'CV',
 		href: '/cv',
-		// rule: 'group-has-[#cv:hover]:translate-x-[8rem] group-has-[#cv.active]:translate-x-[8rem]',
 	},
 	{
 		id: 'projects',
 		text: 'Projects',
 		href: '/projects',
-		// rule: 'group-has-[#projects:hover]:translate-x-[12rem] group-has-[#projects.active]:translate-x-[12rem]',
 	},
 ];
 
