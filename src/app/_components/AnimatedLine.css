@@ -1,0 +1,73 @@
+@keyframes reveal {
+	from {
+		stroke-dashoffset: var(--anim-line-length);
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes revealReverse {
+	from {
+		stroke-dasharray: 0 var(--anim-line-length);
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dasharray: var(--anim-line-length) 0;
+		stroke-dashoffset: var(--anim-line-length);
+	}
+}
+
+@keyframes revealMiddleOut {
+	from {
+		stroke-dasharray: 0 var(--anim-line-length);
+		stroke-dashoffset: calc(0.5 * var(--anim-line-length));
+	}
+	to {
+		stroke-dasharray: var(--anim-line-length) 0;
+		stroke-dashoffset: var(--anim-line-length);
+	}
+}
+
+@keyframes revealOutsideIn {
+	from {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 0 var(--anim-line-length);
+	}
+	to {
+		stroke-dashoffset: 0;
+		stroke-dasharray: calc(0.5 * var(--anim-line-length)) 0;
+	}
+}
+
+.AnimatedLine {
+	--anim-line-length: 1;
+	--anim-line-duration: 500ms;
+	--anim-line-delay: 0ms;
+}
+
+.AnimatedLine.animate path {
+	stroke-dashoffset: var(--anim-line-length);
+	stroke-dasharray: var(--anim-line-length);
+	animation-duration: var(--anim-line-duration);
+	animation-delay: var(--anim-line-delay);
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+.AnimatedLine.animate.forward path {
+	animation-name: reveal;
+}
+
+.AnimatedLine.animate.reverse path {
+	animation-name: revealReverse;
+}
+
+.AnimatedLine.animate.middle-out path {
+	animation-name: revealMiddleOut;
+}
+
+.AnimatedLine.animate.outside-in path {
+	animation-name: revealOutsideIn;
+}
