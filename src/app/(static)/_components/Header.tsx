@@ -7,8 +7,10 @@ const Header = () => {
 		<header className='flex justify-between items-top pt-5'>
 			<div>
 				<Link href='/'>
-					<h2 className='font-(family-name:--font-fira-code) text-4xl'>Joe Capezzuto</h2>
-					<h3 className='font-(family-name:--font-roboto-condensed) text-2xl'>Full Stack Developer</h3>
+					<h2 className='font-(family-name:--font-fira-code) text-2xl md:text-4xl'>Joe Capezzuto</h2>
+					<h3 className='font-(family-name:--font-roboto-condensed) hidden md:block md:text-xl font-light'>
+						Full Stack Developer
+					</h3>
 				</Link>
 			</div>
 			<div>
