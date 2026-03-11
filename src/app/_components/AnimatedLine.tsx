@@ -16,6 +16,9 @@ interface AnimatedLineProps {
 	animateType?: 'forward' | 'reverse' | 'middle-out' | 'outside-in';
 	duration?: number | string;
 	delay?: number | string;
+	onAnimationStart?(evt: AnimationEvent): any;
+	onAnimationEnd?(evt: AnimationEvent): any;
+	onAnimationCancel?(evt: AnimationEvent): any;
 }
 
 const AnimatedLine = ({
@@ -32,9 +35,13 @@ const AnimatedLine = ({
 	animateType = 'forward',
 	duration = '500ms',
 	delay = '0ms',
+	onAnimationStart,
+	onAnimationEnd,
+	onAnimationCancel,
 }: AnimatedLineProps) => {
 	const isVertical = orientation === 'vertical';
 	const pathRef = useRef<SVGPathElement>(null);
+	const svgRef = useRef<SVGSVGElement>(null);
 
 	const svgBox = useMemo(() => {
 		return {
@@ -43,8 +50,32 @@ const AnimatedLine = ({
 		};
 	}, [length, weight, isVertical, width, height]);
 
+	useEffect(() => {
+		if (onAnimationStart) {
+			svgRef.current?.addEventListener('animationstart', onAnimationStart);
+		}
+		if (onAnimationEnd) {
+			svgRef.current?.addEventListener('animationend', onAnimationEnd);
+		}
+		if (onAnimationCancel) {
+			svgRef.current?.addEventListener('animationcancel', onAnimationCancel);
+		}
+		return () => {
+			if (onAnimationStart) {
+				svgRef.current?.removeEventListener('animationstart', onAnimationStart);
+			}
+			if (onAnimationEnd) {
+				svgRef.current?.removeEventListener('animationend', onAnimationEnd);
+			}
+			if (onAnimationCancel) {
+				svgRef.current?.removeEventListener('animationcancel', onAnimationCancel);
+			}
+		};
+	}, []);
+
 	return (
 		<svg
+			ref={svgRef}
 			viewBox={viewBox || `0 0 ${svgBox.width} ${svgBox.height}`}
 			className={`AnimatedLine${shouldAnimate ? ' animate' : ''} ${animateType}`}
 			width={svgBox.width}

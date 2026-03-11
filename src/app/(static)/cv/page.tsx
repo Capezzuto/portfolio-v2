@@ -1,7 +1,13 @@
-import React from 'react';
+'use client';
+import { useCallback, useState } from 'react';
 import AnimatedLine from '@/app/_components/AnimatedLine';
 
 const CVPage = () => {
+	const [currentStage, setCurrentStage] = useState(1);
+	const animationEndHandler = useCallback((evt: AnimationEvent) => {
+		setCurrentStage((stage) => stage + 1);
+	}, []);
+
 	return (
 		<section className='cv-page'>
 			<h1>C.V.</h1>
@@ -13,24 +19,25 @@ const CVPage = () => {
 				length={400}
 				weight={2}
 				orientation='vertical'
-				shouldAnimate={true}
+				shouldAnimate={currentStage >= 1}
 				animateType='forward'
 				path='M 10 0 v 10 400'
-				duration='1500ms'
+				duration='1000ms'
 				delay='200ms'
+				onAnimationEnd={animationEndHandler}
 			/>
 			<AnimatedLine
 				height={20}
 				width={20}
-				color='#171717'
+				color='oklch(55.6% 0 0)'
 				length={200}
 				weight={2}
-				shouldAnimate={true}
+				shouldAnimate={currentStage >= 2}
 				viewBox='0 0 20 20'
-				path='M 10 0 l 10 10 l -10 10 l -10 -10 l 10 -10 z'
+				path='M 10 1 a 9 9 0 1 1 0 18 a 9 9 0 1 1 0 -18'
 				animateType='outside-in'
-				duration='500ms'
-				delay='1700ms'
+				duration='400ms'
+				onAnimationEnd={animationEndHandler}
 			/>
 		</section>
 	);

@@ -46,9 +46,12 @@
 	--anim-line-delay: 0ms;
 }
 
-.AnimatedLine.animate path {
+.AnimatedLine path {
 	stroke-dashoffset: var(--anim-line-length);
 	stroke-dasharray: var(--anim-line-length);
+}
+
+.AnimatedLine.animate path {
 	animation-duration: var(--anim-line-duration);
 	animation-delay: var(--anim-line-delay);
 	animation-direction: normal;
@@ -60,12 +63,27 @@
 	animation-name: reveal;
 }
 
+.AnimatedLine.reverse path {
+	stroke-dasharray: 0 var(--anim-line-length);
+	stroke-dashoffset: 0;
+}
+
 .AnimatedLine.animate.reverse path {
 	animation-name: revealReverse;
 }
 
+.AnimatedLine.middle-out path {
+	stroke-dasharray: 0 var(--anim-line-length);
+	stroke-dashoffset: calc(0.5 * var(--anim-line-length));
+}
+
 .AnimatedLine.animate.middle-out path {
 	animation-name: revealMiddleOut;
+}
+
+.AnimatedLine.outside-in path {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 0 var(--anim-line-length);
 }
 
 .AnimatedLine.animate.outside-in path {
