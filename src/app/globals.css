@@ -53,7 +53,14 @@
 
 @theme {
 	/* --color-__-100:  */
-
+	--work-list-style: radial-gradient(
+		circle at 50% 55%,
+		transparent 0,
+		transparent 35%,
+		rgb(98, 116, 142) 35%,
+		rgb(98, 116, 142) 55%,
+		transparent 55%
+	);
 	--gradient-color-a: rgba(0, 0, 0, 0);
 	--gradient-color-b: rgba(0, 0, 0, 0);
 	--gradient-color-c: rgba(0, 0, 0, 0);
