@@ -1,0 +1,140 @@
+{
+	"experience": [
+		{
+			"id": "akqa",
+			"company": "AKQA",
+			"role": "Senior Front End Developer",
+			"startDate": "October 2021",
+			"endDate": "January 2026",
+			"location": "Los Angeles / San Francisco (remote)",
+			"work": [
+				{
+					"description": "Led development for various page collections in the Apple Education Community (education.apple.com)",
+					"technologies": ["react", "sass", "jquery"]
+				},
+				{
+					"description": "Converted core elements and modules of proprietary UI system written with vanilla JS and Sass to flexible, reusable React components",
+					"technologies": ["react", "sass", "jquery"]
+				},
+				{
+					"description": "Redesigned template build system, updating core dependencies to latest versions, simplifying configuration, and reducing build times by up to 30%",
+					"technologies": ["webpack", "gulp", "react", "sass"]
+				},
+				{
+					"description": "Wrote documentation to assist localization teams for 18 international locales",
+					"technologies": []
+				},
+				{
+					"description": "Provided code reviews and managed Git merge strategies",
+					"technologies": []
+				}
+			]
+		},
+		{
+			"id": "tr",
+			"company": "Twisted Rope",
+			"role": "Web Developer/Senior Web Developer",
+			"startDate": "April 2017",
+			"endDate": "September 2021",
+			"location": "Manhattan Beach, Ca",
+			"work": [
+				{
+					"description": "Led development on a multi-player game with real-time interaction and data visualizations",
+					"technologies": ["react", "nodejs", "mongodb", "socketio", "d3", "express"]
+				},
+				{
+					"description": "Developed and optimized a web application with complex forms and validation, reducing component re-renders by up to 50% and improving UX",
+					"technologies": ["react", "redux", "nextjs", "mysql"]
+				},
+				{
+					"description": "Developed two employee training courses with non-linear progression for a client's Learning Management System; based on courses' success, templates were white-labeled and distributed with new content",
+					"technologies": ["vue", "vuex", "scorm"]
+				},
+				{
+					"description": "Developed front end data-driven dashboards and report-generating applications; communicated technical requirements for APIs",
+					"technologies": ["react", "vue", "vuex", "d3", "mysql", "rxjs"]
+				},
+				{
+					"description": "Wrote training materials for a client's custom CMS to onboard new developers",
+					"technologies": []
+				},
+				{ "description": "Led code reviews and mentored junior developers", "technologies": [] }
+			]
+		},
+		{
+			"id": "freelance",
+			"company": "Deaf Man's BBQ, Mami Jolly Jam",
+			"role": "Freelance Graphic Designer",
+			"startDate": "April 2013",
+			"endDate": "February 2016",
+			"location": "Los Angeles, CA",
+			"work": [
+				{
+					"description": "Designed labels for new products and redesigned existing labels to meet FDA standards",
+					"technologies": []
+				},
+				{ "description": "Maintained WordPress site for promotional campaigns", "technologies": [] },
+				{ "description": "Created marketing materials for ad campaigns and product launches", "technologies": [] }
+			]
+		}
+	],
+	"education": [
+		{
+			"school": "Hack Reactor",
+			"location": "Santa Monica, CA",
+			"degree": "JavaScript Web Application Development",
+			"startDate": "May 2016",
+			"endDate": "September 2016"
+		},
+		{
+			"school": "California State University, Long Beach",
+			"location": "Long Beach, CA",
+			"degree": "M.A., Art History",
+			"startDate": "August 2009",
+			"endDate": "May 2012"
+		},
+		{
+			"school": "Edinboro University of Pennsylvania",
+			"location": "Edinboro, PA",
+			"degree": "B.F.A., Applied Media Arts",
+			"startDate": "September 1998",
+			"endDate": "June 2002"
+		}
+	],
+	"skills": [
+		{ "id": "javascript", "name": "JavaScript", "type": "language" },
+		{ "id": "html", "name": "HTML", "type": "language" },
+		{ "id": "css", "name": "CSS", "type": "language" },
+		{ "id": "typescript", "name": "TypeScript", "type": "language" },
+		{ "id": "sass", "name": "Sass", "type": "language" },
+		{ "id": "react", "name": "React", "type": "framework" },
+		{ "id": "nextjs", "name": "NextJS", "type": "framework" },
+		{ "id": "vue", "name": "Vue", "type": "framework" },
+		{ "id": "node", "name": "NodeJS", "type": "framework" },
+		{ "id": "express", "name": "Express", "type": "framework" },
+		{ "id": "mysql", "name": "MySQL", "type": "framework" },
+		{ "id": "postgresql", "name": "PostgreSQL", "type": "framework" },
+		{ "id": "mongo", "name": "MongoDB", "type": "framework" },
+		{ "id": "webpack", "name": "Webpack", "type": "build_tool" },
+		{ "id": "vite", "name": "Vite", "type": "build_tool" },
+		{ "id": "docker", "name": "Docker", "type": "build_tool" },
+		{ "id": "rollup", "name": "RollUp", "type": "build_tool" },
+		{ "id": "gulp", "name": "Gulp", "type": "build_tool" },
+		{ "id": "redux", "name": "Redux", "type": "library" },
+		{ "id": "vuex", "name": "Vuex", "type": "library" },
+		{ "id": "d3", "name": "D3", "type": "library" },
+		{ "id": "jquery", "name": "jQuery", "type": "library" },
+		{ "id": "tailwind", "name": "Tailwind", "type": "library" },
+		{ "id": "socketio", "name": "Socket.IO", "type": "library" },
+		{ "id": "rxjs", "name": "RxJS", "type": "library" },
+		{ "id": "lottie", "name": "Lottie", "type": "library" },
+		{ "id": "xstate", "name": "XState", "type": "library" },
+		{ "id": "postman", "name": "Postman", "type": "tooling" },
+		{ "id": "git", "name": "Git", "type": "tooling" },
+		{ "id": "bash", "name": "Bash/Zsh", "type": "tooling" },
+		{ "id": "wcag", "name": "WCAG 2.1 AA", "type": "standards" },
+		{ "id": "scorm", "name": "SCORM (1.2/1.4)", "type": "standards" },
+		{ "id": "documentation", "name": "technical documentation", "type": "practices" },
+		{ "id": "review", "name": "code review", "type": "practices" }
+	]
+}
