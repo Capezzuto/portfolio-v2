@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
+import Headline from '../_components/Headline';
 
 const AboutPage = () => {
 	return (
 		<section className='about-page'>
-			<h1 className='font-(family-name:--font-fira-code) text-3xl md:text-4xl lg:text-5xl mt-20 mb-12'>About (me)</h1>
+			<Headline text='About (me)' />
 			<div className='flex flex-col md:flex-row-reverse gap-6 md:gap-4 lg:gap-6'>
 				<div className='image-column flex-1'>
 					<Image

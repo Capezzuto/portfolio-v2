@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useState } from 'react';
 import AnimatedLine from '@/app/_components/AnimatedLine';
+import Headline from '../_components/Headline';
 
 const CVPage = () => {
 	const [currentStage, setCurrentStage] = useState(1);
@@ -10,7 +11,7 @@ const CVPage = () => {
 
 	return (
 		<section className='cv-page'>
-			<h1>C.V.</h1>
+			<Headline text='C.V.' />
 			<AnimatedLine
 				color='#171717'
 				viewBox='0 0 20 400'
