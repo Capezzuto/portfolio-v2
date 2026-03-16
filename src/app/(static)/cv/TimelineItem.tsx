@@ -7,6 +7,8 @@ interface TimelineItemProps {
 	shouldAnimateCircle: boolean;
 	shouldAnimateLine: boolean;
 	shouldShowLine: boolean;
+	circleDuration?: string | number;
+	lineDuration?: string | number;
 	animationEndHandler?(evt: AnimationEvent): any;
 }
 
@@ -15,6 +17,8 @@ const TimelineItem = ({
 	shouldAnimateCircle,
 	shouldAnimateLine,
 	shouldShowLine,
+	circleDuration = '400ms',
+	lineDuration = '1000ms',
 	animationEndHandler,
 }: TimelineItemProps) => {
 	const contentContainerRef = useRef(null);
@@ -49,7 +53,7 @@ const TimelineItem = ({
 					viewBox='0 0 20 20'
 					path='M 10 1 a 9 9 0 1 1 0 18 a 9 9 0 1 1 0 -18'
 					animateType='outside-in'
-					duration='400ms'
+					duration={circleDuration}
 					onAnimationEnd={animationEndHandler}
 				/>
 				<AnimatedLine
@@ -63,7 +67,7 @@ const TimelineItem = ({
 					viewBox='0 0 20 20'
 					path='M 10 4.5 a 3 3 0 1 1 0 11 a 3 3 0 1 1 0 -11'
 					animateType='outside-in'
-					duration='400ms'
+					duration={circleDuration}
 					delay='70ms'
 				/>
 				{shouldShowLine ? (
@@ -79,7 +83,7 @@ const TimelineItem = ({
 						shouldAnimate={shouldAnimateLine}
 						animateType='forward'
 						path={`M 10 0 v 10 ${lineLength}`}
-						duration='1000ms'
+						duration={lineDuration}
 						delay='150ms'
 						onAnimationEnd={animationEndHandler}
 					/>
