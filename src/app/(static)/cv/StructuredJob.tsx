@@ -15,8 +15,8 @@ interface Job {
 }
 const StructuredJob = ({ jobData }: { jobData: Job }) => {
 	return (
-		<div className='StructuredJob max-w-4xl'>
-			<div className='pl-4 mb-4'>
+		<div className='StructuredJob max-w-4xl mb-8'>
+			<div className='pl-4 mb-2'>
 				<h3 className='font-(family-name:--font-roboto-condensed) lg:text-2xl/6 md:text-xl/5 text-lg/4 font-medium mb-2'>
 					{jobData.company} - {jobData.role}
 				</h3>
