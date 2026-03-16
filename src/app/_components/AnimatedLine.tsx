@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import './AnimatedLine.css';
 
 interface AnimatedLineProps {
+	customClassName?: string;
 	length: number;
 	weight?: number;
 	height?: number | string;
@@ -22,6 +23,7 @@ interface AnimatedLineProps {
 }
 
 const AnimatedLine = ({
+	customClassName = '',
 	length = 1,
 	weight = 1,
 	height,
@@ -77,7 +79,7 @@ const AnimatedLine = ({
 		<svg
 			ref={svgRef}
 			viewBox={viewBox || `0 0 ${svgBox.width} ${svgBox.height}`}
-			className={`AnimatedLine${shouldAnimate ? ' animate' : ''} ${animateType}`}
+			className={`AnimatedLine${shouldAnimate ? ' animate' : ''} ${animateType}${customClassName ? ' ' + customClassName : ''}`}
 			width={svgBox.width}
 			height={svgBox.height}
 			style={{
