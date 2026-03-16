@@ -1,44 +1,85 @@
 'use client';
-import { useCallback, useState } from 'react';
-import AnimatedLine from '@/app/_components/AnimatedLine';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Headline from '../_components/Headline';
+import SubHeadline from './SubHeadline';
+import TimelineItem from './TimelineItem';
 import StructuredJob from './StructuredJob';
 import StructuredEducation from './StructuredEducation';
 import workHistory from '@/app/_data/work-history.json';
-import SubHeadline from './SubHeadline';
-import TimelineItem from './TimelineItem';
 
 const CVPage = () => {
-	const [currentStage, setCurrentStage] = useState(1);
-	const [currentEduStage, setCurrentEduStage] = useState(1);
+	const eduSectionRef = useRef(null);
+	const jobSectionRef = useRef(null);
+	const [currentJobStage, setCurrentJobStage] = useState(0);
+	const [currentEduStage, setCurrentEduStage] = useState(0);
 	const jobAnimationEndHandler = useCallback((evt: AnimationEvent) => {
-		setCurrentStage((stage) => stage + 1);
+		setCurrentJobStage((stage) => stage + 1);
 	}, []);
 	const eduAnimationEndHandler = useCallback((evt: AnimationEvent) => {
 		setCurrentEduStage((stage) => stage + 1);
 	}, []);
 
+	useEffect(() => {
+		const jobIntersectionObserver = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						setCurrentJobStage(1);
+						jobIntersectionObserver.disconnect();
+					}
+				}
+			},
+			{ threshold: 0.25 }
+		);
+		if (jobSectionRef.current && !currentJobStage) {
+			jobIntersectionObserver.observe(jobSectionRef.current);
+		}
+		return () => {
+			jobIntersectionObserver.disconnect();
+		};
+	}, [currentJobStage]);
+
+	useEffect(() => {
+		const eduIntersectionObserver = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						setCurrentEduStage(1);
+						eduIntersectionObserver.disconnect();
+					}
+				}
+			},
+			{ threshold: 0.25 }
+		);
+		if (eduSectionRef.current && !currentEduStage) {
+			eduIntersectionObserver.observe(eduSectionRef.current);
+		}
+		return () => {
+			eduIntersectionObserver.disconnect();
+		};
+	}, [currentEduStage]);
+
 	return (
 		<section className='cv-page'>
 			<Headline text='C.V.' />
-			<section>
+			<section id='skills'>
 				<SubHeadline text='Skills' />
 			</section>
-			<section>
+			<section ref={jobSectionRef} id='experience'>
 				<SubHeadline text='Experience' />
 				{workHistory.experience.map((job, i, arr) => (
 					<TimelineItem
 						key={job.id}
 						animationEndHandler={jobAnimationEndHandler}
-						shouldAnimateCircle={currentStage >= 2 * i + 1}
-						shouldAnimateLine={currentStage >= 2 * i + 2}
+						shouldAnimateCircle={currentJobStage >= 2 * i + 1}
+						shouldAnimateLine={currentJobStage >= 2 * i + 2}
 						shouldShowLine={i + 1 < arr.length}
 					>
 						<StructuredJob jobData={job} />
 					</TimelineItem>
 				))}
 			</section>
-			<section>
+			<section ref={eduSectionRef} id='education'>
 				<SubHeadline text='Education' />
 				{workHistory.education.map((school, i, arr) => (
 					<TimelineItem
