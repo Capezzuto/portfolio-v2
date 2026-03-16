@@ -80,6 +80,7 @@
 	],
 	"education": [
 		{
+			"id": "hack_reactor",
 			"school": "Hack Reactor",
 			"location": "Santa Monica, CA",
 			"degree": "JavaScript Web Application Development",
@@ -87,6 +88,7 @@
 			"endDate": "September 2016"
 		},
 		{
+			"id": "csulb",
 			"school": "California State University, Long Beach",
 			"location": "Long Beach, CA",
 			"degree": "M.A., Art History",
@@ -94,6 +96,7 @@
 			"endDate": "May 2012"
 		},
 		{
+			"id": "eup",
 			"school": "Edinboro University of Pennsylvania",
 			"location": "Edinboro, PA",
 			"degree": "B.F.A., Applied Media Arts",
