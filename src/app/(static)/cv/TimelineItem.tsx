@@ -64,6 +64,7 @@ const TimelineItem = ({
 					path='M 10 4.5 a 3 3 0 1 1 0 11 a 3 3 0 1 1 0 -11'
 					animateType='outside-in'
 					duration='400ms'
+					delay='70ms'
 				/>
 				{shouldShowLine ? (
 					<AnimatedLine
@@ -79,7 +80,7 @@ const TimelineItem = ({
 						animateType='forward'
 						path={`M 10 0 v 10 ${lineLength}`}
 						duration='1000ms'
-						delay='200ms'
+						delay='150ms'
 						onAnimationEnd={animationEndHandler}
 					/>
 				) : null}
