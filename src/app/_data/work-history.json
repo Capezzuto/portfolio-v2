@@ -6,7 +6,7 @@
 			"role": "Senior Front End Developer",
 			"startDate": "October 2021",
 			"endDate": "January 2026",
-			"location": "Los Angeles / San Francisco (remote)",
+			"location": "Los Angeles, CA / San Francisco, CA (remote)",
 			"work": [
 				{
 					"description": "Led development for various page collections in the Apple Education Community (education.apple.com)",
@@ -36,11 +36,11 @@
 			"role": "Web Developer/Senior Web Developer",
 			"startDate": "April 2017",
 			"endDate": "September 2021",
-			"location": "Manhattan Beach, Ca",
+			"location": "Manhattan Beach, CA",
 			"work": [
 				{
 					"description": "Led development on a multi-player game with real-time interaction and data visualizations",
-					"technologies": ["react", "nodejs", "mongodb", "socketio", "d3", "express"]
+					"technologies": ["react", "node", "mongo", "socketio", "d3", "express"]
 				},
 				{
 					"description": "Developed and optimized a web application with complex forms and validation, reducing component re-renders by up to 50% and improving UX",
