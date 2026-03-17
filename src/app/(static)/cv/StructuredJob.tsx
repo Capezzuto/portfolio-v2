@@ -51,7 +51,7 @@ const StructuredJob = ({ jobData }: { jobData: Job }) => {
 							<SkillChip
 								text={skillsById[id]?.name ?? ''}
 								skillType={skillsById[id]?.type ?? ''}
-								customClassName='ml-1'
+								customClassName='mr-1 text-xs not-hover:bg-transparent cursor-default'
 							/>
 						))}
 					</li>

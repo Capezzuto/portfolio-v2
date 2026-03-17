@@ -67,8 +67,8 @@ const CVPage = () => {
 				<SubHeadline text='Skills' />
 				<ul>
 					{workHistory.skills.map((skill: { id: string; name: string; type: string }) => (
-						<li className='m-1 inline-block'>
-							<SkillChip key={skill.id} text={skill.name} skillType={skill.type} />
+						<li key={skill.id} className='m-1 inline-block'>
+							<SkillChip text={skill.name} skillType={skill.type} />
 						</li>
 					))}
 				</ul>
