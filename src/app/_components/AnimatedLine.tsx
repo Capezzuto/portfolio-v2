@@ -88,6 +88,7 @@ const AnimatedLine = ({
 				['--anim-line-delay' as string]: typeof delay === 'number' ? delay + 'ms' : delay,
 			}}
 			xmlns='http://www.w3.org/2000/svg'
+			aria-hidden='true'
 		>
 			<path
 				ref={pathRef}

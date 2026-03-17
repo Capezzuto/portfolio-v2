@@ -42,7 +42,7 @@ const TimelineItem = ({
 
 	return (
 		<div className='TimelineItem flex'>
-			<div className='TimelineItem-lineContainer relative'>
+			<div className='TimelineItem-lineContainer pt-0.5 relative'>
 				<AnimatedLine
 					height={20}
 					width={20}
@@ -57,7 +57,7 @@ const TimelineItem = ({
 					onAnimationEnd={animationEndHandler}
 				/>
 				<AnimatedLine
-					customClassName='absolute top-0 left-0'
+					customClassName='absolute top-0.5 left-0'
 					height={20}
 					width={20}
 					color='#62748e'

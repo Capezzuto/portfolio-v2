@@ -47,8 +47,10 @@ const StructuredJob = ({ jobData }: { jobData: Job }) => {
 				{jobData.work.map((task, i) => (
 					<li className='mb-2' key={i}>
 						<span className='mr-2' dangerouslySetInnerHTML={{ __html: task.description }}></span>
+						{task.technologies.length ? <span aria-label='; Technologies used: '></span> : null}
 						{task.technologies.map((id: string) => (
 							<SkillChip
+								key={id}
 								text={skillsById[id]?.name ?? ''}
 								skillType={skillsById[id]?.type ?? ''}
 								customClassName='mr-1 text-xs not-hover:bg-transparent cursor-default'

@@ -98,15 +98,13 @@ const CVPage = () => {
 						shouldShowLine={i + 1 < arr.length}
 						lineDuration='400ms'
 					>
-						<div>
-							<StructuredEducation
-								school={school.school}
-								degree={school.degree}
-								location={school.location}
-								startDate={school.startDate}
-								endDate={school.endDate}
-							/>
-						</div>
+						<StructuredEducation
+							school={school.school}
+							degree={school.degree}
+							location={school.location}
+							startDate={school.startDate}
+							endDate={school.endDate}
+						/>
 					</TimelineItem>
 				))}
 			</section>
