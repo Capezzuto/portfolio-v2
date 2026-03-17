@@ -6,6 +6,7 @@ import TimelineItem from './TimelineItem';
 import StructuredJob from './StructuredJob';
 import StructuredEducation from './StructuredEducation';
 import workHistory from '@/app/_data/work-history.json';
+import SkillChip from './SkillChip';
 
 const CVPage = () => {
 	const eduSectionRef = useRef(null);
@@ -62,8 +63,15 @@ const CVPage = () => {
 	return (
 		<section className='cv-page'>
 			<Headline text='C.V.' />
-			<section id='skills'>
+			<section id='skills' className='mb-8'>
 				<SubHeadline text='Skills' />
+				<ul>
+					{workHistory.skills.map((skill: { id: string; name: string; type: string }) => (
+						<li className='m-1 inline-block'>
+							<SkillChip key={skill.id} text={skill.name} skillType={skill.type} />
+						</li>
+					))}
+				</ul>
 			</section>
 			<section ref={jobSectionRef} id='experience'>
 				<SubHeadline text='Experience' />

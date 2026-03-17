@@ -1,7 +1,16 @@
 import React from 'react';
+import SkillChip from './SkillChip';
+import workHistory from '@/app/_data/work-history.json';
+
 type JobTask = {
 	description: string;
 	technologies: string[];
+};
+
+type Skill = {
+	id: string;
+	name: string;
+	type: string;
 };
 
 interface Job {
@@ -13,6 +22,15 @@ interface Job {
 	location: string;
 	work: JobTask[];
 }
+
+const skillsById: { [key: string]: Skill } = workHistory.skills.reduce(
+	(obj: { [key: string]: Skill }, skill: Skill) => {
+		obj[skill.id] = skill;
+		return obj;
+	},
+	{}
+);
+
 const StructuredJob = ({ jobData }: { jobData: Job }) => {
 	return (
 		<div className='StructuredJob max-w-3xl mb-8'>
@@ -27,7 +45,16 @@ const StructuredJob = ({ jobData }: { jobData: Job }) => {
 			</div>
 			<ul className='pl-10 list-image-(--work-list-style) list-ouside marker:text-[2em] marker:leading-[1em]'>
 				{jobData.work.map((task, i) => (
-					<li className='mb-2' key={i} dangerouslySetInnerHTML={{ __html: task.description }}></li>
+					<li className='mb-2' key={i}>
+						<span className='mr-2' dangerouslySetInnerHTML={{ __html: task.description }}></span>
+						{task.technologies.map((id: string) => (
+							<SkillChip
+								text={skillsById[id]?.name ?? ''}
+								skillType={skillsById[id]?.type ?? ''}
+								customClassName='ml-1'
+							/>
+						))}
+					</li>
 				))}
 			</ul>
 		</div>
