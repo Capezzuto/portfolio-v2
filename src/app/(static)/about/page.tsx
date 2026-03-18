@@ -14,6 +14,7 @@ const AboutPage = () => {
 						height={480}
 						// sizes='(max-width:768px) 640px, 480px'
 						src='/56-640x480.jpg'
+						className='rounded-lg'
 					/>
 				</div>
 				<div className='text-column flex-1'>
