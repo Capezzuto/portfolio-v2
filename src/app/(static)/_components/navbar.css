@@ -1,41 +1,60 @@
+.Navbar {
+	--home-position: 0;
+	--about-position: 4.5rem;
+	--cv-position: 8rem;
+	--projects-position: 12.25rem;
+}
+
 .Navbar:has(#home.active) .dot-container .dot,
-.Navbar:has(#home:focus) .dot-container .dot,
 .Navbar:has(#home:active) .dot-container .dot {
-	transform: translateX(0);
+	transform: translateX(var(--home-position));
 }
 
 .Navbar:has(#about:active) .dot-container .dot,
-.Navbar:has(#about:focus) .dot-container .dot,
 .Navbar:has(#about.active) .dot-container .dot {
-	transform: translateX(4.25rem);
+	transform: translateX(var(--about-position));
 }
 
 .Navbar:has(#cv:active) .dot-container .dot,
-.Navbar:has(#cv:focus) .dot-container .dot,
 .Navbar:has(#cv.active) .dot-container .dot {
-	transform: translateX(8rem);
+	transform: translateX(var(--cv-position));
 }
 
 .Navbar:has(#projects:active) .dot-container .dot,
-.Navbar:has(#projects:focus) .dot-container .dot,
 .Navbar:has(#projects.active) .dot-container .dot {
-	transform: translateX(12rem);
+	transform: translateX(var(--projects-position));
+}
+
+.Navbar:has(#home:focus) .dot-container .dot {
+	transform: translateX(var(--home-position));
+}
+
+.Navbar:has(#about:focus) .dot-container .dot {
+	transform: translateX(var(--about-position));
+}
+
+.Navbar:has(#cv:focus) .dot-container .dot {
+	transform: translateX(var(--cv-position));
+}
+
+.Navbar:has(#projects:focus) .dot-container .dot {
+	transform: translateX(var(--projects-position));
 }
 
 .Navbar:has(#home:hover) .dot-container .dot {
-	transform: translateX(0);
+	transform: translateX(var(--home-position));
 }
 
 .Navbar:has(#about:hover) .dot-container .dot {
-	transform: translateX(4.25rem);
+	transform: translateX(var(--about-position));
 }
 
 .Navbar:has(#cv:hover) .dot-container .dot {
-	transform: translateX(8rem);
+	transform: translateX(var(--cv-position));
 }
 
 .Navbar:has(#projects:hover) .dot-container .dot {
-	transform: translateX(12rem);
+	transform: translateX(var(--projects-position));
 }
 
 .Navbar .dot-container .dot {

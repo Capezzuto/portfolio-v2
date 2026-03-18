@@ -58,9 +58,9 @@ const Navbar = () => {
 
 	return (
 		<nav className={`Navbar group`}>
-			<div className='Navbar-desktop group hidden md:block'>
+			<div className='Navbar-desktop group hidden md:block -mr-4'>
 				<div className='dot-container pointer-events-none'>
-					<span className='dot inline-block rounded-full w-2 h-2 bg-neutral-900 ml-4 mr-4 pointer-events-none'></span>
+					<span className='dot inline-block rounded-full w-2 h-2 bg-neutral-900 ml-8 mr-8 pointer-events-none'></span>
 				</div>
 				<ul className='flex justify-between'>
 					{tabs.map((tab, i, tabs) => (
@@ -68,7 +68,7 @@ const Navbar = () => {
 							<Link
 								id={tab.id}
 								href={tab.href}
-								className={`pb-4 pt-6 px-4 ${!i ? 'pl-0 ' : ''}${i === tabs.length - 1 ? 'pr-0 ' : ''}${currentPath === tab.href ? ' active' : ''}`}
+								className={`pb-4 pt-6 px-4 ${currentPath === tab.href ? ' active' : ''}`}
 							>
 								{tab.text}
 							</Link>
