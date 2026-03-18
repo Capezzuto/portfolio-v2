@@ -57,18 +57,18 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className={`Navbar group`}>
-			<div className='Navbar-desktop group hidden md:block -mr-4'>
-				<div className='dot-container pointer-events-none'>
+		<nav className={`Navbar group h-full`}>
+			<div className='Navbar-desktop group hidden h-full md:flex -mr-4 flex-col justify-end'>
+				<div className='dot-container pb-0.5 pointer-events-none'>
 					<span className='dot inline-block rounded-full w-2 h-2 bg-neutral-900 ml-8 mr-8 pointer-events-none'></span>
 				</div>
 				<ul className='flex justify-between'>
 					{tabs.map((tab, i, tabs) => (
-						<li key={tab.href} className='font-(family-name:--font-roboto-condensed)'>
+						<li key={tab.href} className='font-(family-name:--font-roboto-condensed) pb-1'>
 							<Link
 								id={tab.id}
 								href={tab.href}
-								className={`pb-4 pt-6 px-4 ${currentPath === tab.href ? ' active' : ''}`}
+								className={`pb-0 pt-8 px-4 ${currentPath === tab.href ? ' active' : ''}`}
 							>
 								{tab.text}
 							</Link>
