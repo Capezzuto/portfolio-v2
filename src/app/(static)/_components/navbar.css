@@ -3,6 +3,9 @@
 	--about-position: 4.5rem;
 	--cv-position: 8rem;
 	--projects-position: 12.25rem;
+	--mobile-transition: transform, opacity;
+	--mobile-duration: 200ms, 500ms;
+	--mobile-delay: 100ms, 0ms;
 }
 
 .Navbar:has(#home.active) .dot-container .dot,
