@@ -97,7 +97,7 @@ const Navbar = () => {
 
 				<div
 					aria-hidden={showMenu ? false : true}
-					className={`${showMenu ? 'blur-none mask-[0%] pointer-events-auto' : 'blur-md mask-[100%] pointer-events-none'} absolute mt-1 right-0 px-0 py-0 backdrop-blur-md rounded-lg border border-neutral-500 border-b-2 mask-(--mobile-mask) mask-size-[300%] transition-property-(--mobile-transition) ease-out duration-(--mobile-duration) delay-(--mobile-delay)`}
+					className={`${showMenu ? 'blur-none mask-[0%] pointer-events-auto' : 'blur-md mask-[100%] pointer-events-none'} absolute mt-1 right-0 px-0 py-0 backdrop-blur-md rounded-lg border border-neutral-500 border-b-2 mask-(--mobile-mask) mask-size-[300%] motion-safe:transition-property-(--mobile-transition) ease-out motion-safe:duration-(--mobile-duration)`}
 				>
 					<MenuOptions />
 				</div>

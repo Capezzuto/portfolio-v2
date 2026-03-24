@@ -57,6 +57,12 @@
 	animation-direction: normal;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
+	@media (prefers-reduced-motion: reduce) {
+		animation-duration: 0ms !important;
+		animation-delay: 0ms !important;
+		stroke-dashoffset: 0;
+		stroke-dasharray: var(--anim-line-length);
+	}
 }
 
 .AnimatedLine.animate.forward path {
