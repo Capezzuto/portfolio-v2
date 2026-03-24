@@ -87,7 +87,7 @@ const Navbar = () => {
 			</div>
 			<div className='Navbar-mobile group block md:hidden relative'>
 				<button
-					className='cursor-pointer px-4 py-2 rounded-lg border border-neutral-500 border-b-2'
+					className='cursor-pointer px-4 py-2 backdrop-blur-md rounded-lg  border border-neutral-500 border-b-2 active:bg-neutral-500/15 active:border-neutral-500/60 active:border-b active:border-t-2'
 					onClick={toggleMenu}
 				>
 					<span aria-hidden='true' className='block rounded-full w-1 h-1 bg-neutral-900 mb-1'></span>
