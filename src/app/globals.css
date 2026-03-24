@@ -25,13 +25,25 @@
 	inherits: false;
 }
 
-@keyframes scroll-fade {
+@keyframes ripple {
 	0% {
-		filter: blur(20px);
-		background-position-x: 100%;
-	}
-	50% {
 		filter: blur(0px);
+		background-position: 100%;
+	}
+	23% {
+		background-position: 100%;
+	}
+	25% {
+		filter: blur(0px);
+	}
+	30% {
+		filter: blur(10px);
+	}
+	35% {
+		filter: blur(0px);
+	}
+	38% {
+		background-position: 0%;
 	}
 	100% {
 		filter: blur(0px);
@@ -42,6 +54,39 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+}
+
+@theme {
+	--work-list-style: radial-gradient(
+		circle at 50% 55%,
+		transparent 0,
+		transparent 35%,
+		rgb(98, 116, 142) 35%,
+		rgb(98, 116, 142) 55%,
+		transparent 55%
+	);
+
+	--ripple-gradient: linear-gradient(
+		45deg,
+		oklch(14.5% 0 0) 0%,
+		oklch(14.5% 0 0) 30%,
+		oklch(14.5% 0 0 / 0) 40%,
+		oklch(14.5% 0 0 / 0) 50%,
+		oklch(14.5% 0 0 / 0) 60%,
+		oklch(14.5% 0 0) 74%,
+		oklch(14.5% 0 0) 100%
+	);
+
+	--ripple-animation: ripple 30s ease-in-out forwards infinite;
+
+	--gradient-color-a: rgba(0, 0, 0, 0);
+	--gradient-color-b: rgba(0, 0, 0, 0);
+	--gradient-color-c: rgba(0, 0, 0, 0);
+	--gradient-color-d: rgba(0, 0, 0, 0);
+
+	--dynamic-gradient-1: linear-gradient(in oklch 30deg, var(--gradient-color-a) 0%, var(--gradient-color-b) 100%);
+	--dynamic-gradient-2: linear-gradient(in oklch 270deg, var(--gradient-color-c) 0%, var(--gradient-color-d) 100%);
+	/* --ease-snappy-dot: cubic-bezier(); */
 }
 
 @theme inline {
@@ -133,27 +178,6 @@
 	--color-cool-sky-800: rgb(2 53 100);
 	--color-cool-sky-900: rgb(1 26 50);
 	--color-cool-sky-950: rgb(1 18 35);
-}
-
-@theme {
-	/* --color-__-100:  */
-	--work-list-style: radial-gradient(
-		circle at 50% 55%,
-		transparent 0,
-		transparent 35%,
-		rgb(98, 116, 142) 35%,
-		rgb(98, 116, 142) 55%,
-		transparent 55%
-	);
-
-	--gradient-color-a: rgba(0, 0, 0, 0);
-	--gradient-color-b: rgba(0, 0, 0, 0);
-	--gradient-color-c: rgba(0, 0, 0, 0);
-	--gradient-color-d: rgba(0, 0, 0, 0);
-
-	--dynamic-gradient-1: linear-gradient(in oklch 30deg, var(--gradient-color-a) 0%, var(--gradient-color-b) 100%);
-	--dynamic-gradient-2: linear-gradient(in oklch 270deg, var(--gradient-color-c) 0%, var(--gradient-color-d) 100%);
-	/* --ease-snappy-dot: cubic-bezier(); */
 }
 
 @media (prefers-color-scheme: dark) {
