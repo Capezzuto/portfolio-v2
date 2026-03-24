@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Headline from '../_components/Headline';
-import profile from '../../../../public/PROFILE_1280x1280.webp';
+import profile from '../../../../public/images/PROFILE_1280x1280.webp';
 
 const AboutPage = () => {
 	return (
