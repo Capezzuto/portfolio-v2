@@ -195,6 +195,8 @@ body {
 
 .dynamic-background {
 	--bg-trans-duration: 1000ms;
+
+	background-origin: padding-box;
 	background-image:
 		linear-gradient(in oklch 30deg, var(--gradient-color-a) 0%, var(--gradient-color-b) 100%),
 		linear-gradient(in oklch 315deg, var(--gradient-color-c) 0%, var(--gradient-color-d) 100%);
@@ -211,6 +213,9 @@ body {
 		--gradient-color-c var(--bg-trans-duration),
 		--gradient-color-d var(--bg-trans-duration),
 		background-position var(--bg-trans-duration);
+
+	/* Fix for layout jump when scrollbar appears */
+	padding-inline-start: calc(100vw - 100%);
 }
 
 .dynamic-background:has(.home-page) {
