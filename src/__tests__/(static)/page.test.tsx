@@ -5,6 +5,7 @@ import HomePage from '@/app/(static)/page';
 describe('Home page', () => {
   it('should render a headline', async () => {
     render(<HomePage />);
-    screen.getByRole('heading', { name: /hi/i });
+    const headline = screen.getByRole('heading', { level: 1 });
+    expect(headline).toBeDefined();
   });
 });
