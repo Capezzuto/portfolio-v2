@@ -290,4 +290,6 @@ body {
 	background-position:
 		20% 80%,
 		50% 50%;
+
+	--custom-gray: rgb(69, 70, 75);
 }
