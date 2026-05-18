@@ -191,6 +191,7 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+	--ultra-large-text: min(50vw, 50vh);
 }
 
 .dynamic-background {
@@ -258,4 +259,15 @@ body {
 	background-position:
 		75% 25%,
 		50% 25%;
+}
+
+.dynamic-background:has(.not-found-page) {
+	--gradient-color-a: rgba(223, 237, 247, 1);
+	--gradient-color-b: rgba(237, 237, 237, 1);
+	--gradient-color-c: rgba(197, 197, 212, 1);
+	--gradient-color-d: rgba(232, 229, 218, 1);
+
+	background-position:
+		20% 80%,
+		50% 50%;
 }
