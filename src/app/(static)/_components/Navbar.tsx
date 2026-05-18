@@ -34,7 +34,7 @@ const MenuOptions = () => {
 	return (
 		<>
 			<div className='dot-container pb-0.5 pointer-events-none'>
-				<span className='dot inline-block rounded-full w-2 h-2 bg-neutral-900 ml-8 mr-8 pointer-events-none'></span>
+				<span className='dot inline-block rounded-full w-2 h-2 bg-foreground ml-8 mr-8 pointer-events-none'></span>
 			</div>
 			<ul className='flex justify-between'>
 				{tabs.map((tab) => (
