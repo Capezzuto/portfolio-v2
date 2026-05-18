@@ -38,12 +38,14 @@ const StructuredJob = ({ jobData }: { jobData: Job }) => {
 				<h3 className='font-(family-name:--font-roboto-condensed) lg:text-2xl/6 md:text-xl/5 text-lg/4 font-medium mb-2'>
 					{jobData.company} - <span className='font-normal'>{jobData.role}</span>
 				</h3>
-				<p className='font-(family-name:--font-roboto-condensed) text-slate-600 leading-5'>{jobData.location}</p>
-				<p className='font-(family-name:--font-roboto-condensed) text-slate-600 leading-5'>
+				<p className='font-(family-name:--font-roboto-condensed) text-slate-600 dark:text-slate-300 leading-5'>
+					{jobData.location}
+				</p>
+				<p className='font-(family-name:--font-roboto-condensed) text-slate-600 dark:text-slate-300 leading-5'>
 					{jobData.startDate} - {jobData.endDate}
 				</p>
 			</div>
-			<ul className='pl-10 list-image-(--work-list-style) list-ouside marker:text-[2em] marker:leading-[1em]'>
+			<ul className='pl-10 list-image-(--work-list-style) dark:list-image-(--work-list-style-dark) list-ouside marker:text-[2em] marker:leading-[1em]'>
 				{jobData.work.map((task, i) => (
 					<li className='mb-2' key={i}>
 						<span className='mr-2' dangerouslySetInnerHTML={{ __html: task.description }}></span>

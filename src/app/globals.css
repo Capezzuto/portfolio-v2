@@ -66,6 +66,15 @@
 		transparent 55%
 	);
 
+	--work-list-style-dark: radial-gradient(
+		circle at 50% 55%,
+		transparent 0,
+		transparent 35%,
+		rgb(200, 213, 226) 35%,
+		rgb(200, 213, 226) 55%,
+		transparent 55%
+	);
+
 	--ripple-gradient: linear-gradient(
 		45deg,
 		oklch(14.5% 0 0) 0%,
