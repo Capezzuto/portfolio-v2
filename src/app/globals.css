@@ -292,8 +292,8 @@ body {
 
 @media screen and (prefers-color-scheme: dark) {
 	.dynamic-background:has(.cv-page) {
-		--gradient-color-a: rgb(104, 97, 22);
-		--gradient-color-b: rgb(52, 66, 61);
+		--gradient-color-a: rgb(83, 82, 23);
+		--gradient-color-b: rgb(48, 59, 55);
 		--gradient-color-c: rgba(128, 128, 117, 0);
 		--gradient-color-d: rgba(128, 128, 158, 0);
 	}
