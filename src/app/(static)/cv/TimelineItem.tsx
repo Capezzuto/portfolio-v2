@@ -1,6 +1,7 @@
 'use client';
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import AnimatedLine from '@/app/_components/AnimatedLine';
+import useDarkMode from '@/app/_utils/useDarkMode';
 
 interface TimelineItemProps {
 	children: ReactNode;
@@ -23,6 +24,7 @@ const TimelineItem = ({
 }: TimelineItemProps) => {
 	const contentContainerRef = useRef(null);
 	const [lineLength, setLineLength] = useState(0);
+	const isDarkMode = useDarkMode();
 
 	useEffect(() => {
 		const contentHeightObserver = new ResizeObserver((entries) => {
@@ -46,7 +48,7 @@ const TimelineItem = ({
 				<AnimatedLine
 					height={20}
 					width={20}
-					color='#62748e'
+					color={isDarkMode ? '#c8d5e2' : '#62748e'}
 					length={200}
 					weight={1}
 					shouldAnimate={shouldAnimateCircle}
@@ -60,7 +62,7 @@ const TimelineItem = ({
 					customClassName='absolute top-0.5 left-0'
 					height={20}
 					width={20}
-					color='#62748e'
+					color={isDarkMode ? '#c8d5e2' : '#62748e'}
 					length={200}
 					weight={1}
 					shouldAnimate={shouldAnimateCircle}
@@ -73,7 +75,7 @@ const TimelineItem = ({
 				{shouldShowLine ? (
 					<AnimatedLine
 						customClassName='absolute'
-						color='#62748e'
+						color={isDarkMode ? '#c8d5e2' : '#62748e'}
 						viewBox={`0 0 20 ${lineLength}`}
 						width={20}
 						height={lineLength}
