@@ -77,6 +77,17 @@
 		oklch(14.5% 0 0) 100%
 	);
 
+	--ripple-gradient-dark: linear-gradient(
+		45deg,
+		oklch(100% 0 0) 0%,
+		oklch(100% 0 0) 30%,
+		oklch(100% 0 0 / 0) 40%,
+		oklch(100% 0 0 / 0) 50%,
+		oklch(100% 0 0 / 0) 60%,
+		oklch(100% 0 0) 74%,
+		oklch(100% 0 0) 100%
+	);
+
 	--ripple-animation: ripple 30s ease-in-out forwards infinite;
 
 	--gradient-color-a: rgba(0, 0, 0, 0);
