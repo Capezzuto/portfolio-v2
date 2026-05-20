@@ -12,17 +12,19 @@ const NotFoundPage = (props: NotFoundPageProps) => {
 					<section className='flex justify-center items-center flex-1 not-found-page relative size-full'>
 						<div className='absolute place-self-center inset-0 '>
 							<h1 className='font-(family-name:--font-fira-code) text-center'>
-								<span className='block text-(length:--ultra-large-text) text-slate-300 blur-sm md:blur-md'>404</span>
-								<span className='block text-2xl text-slate-400'>Page Not Found</span>
+								<span className='block text-(length:--ultra-large-text) text-slate-300 dark:text-(--custom-gray) blur-sm md:blur-md'>
+									404
+								</span>
+								<span className='block text-2xl text-slate-400 dark:text-zinc-400'>Page Not Found</span>
 							</h1>
 						</div>
 						<div className='flex-1 z-1 relative fit-content text-center text-base md:text-xl'>
-							<p className='font-(family-name:--font-roboto-condensed) text-slate-600'>
+							<p className='font-(family-name:--font-roboto-condensed) text-slate-600 dark:text-zinc-300'>
 								The page you are looking for is not here.
 							</p>
-							<p className='font-(family-name:--font-roboto-condensed) text-slate-600'>
+							<p className='font-(family-name:--font-roboto-condensed) text-slate-600 dark:text-zinc-300'>
 								Check the URL and try again, or try the{' '}
-								<Link href='/' className='underline text-sky-600'>
+								<Link href='/' className='underline text-sky-600 dark:text-sky-300'>
 									Home&nbsp;page
 								</Link>
 								.

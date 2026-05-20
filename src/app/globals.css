@@ -66,6 +66,15 @@
 		transparent 55%
 	);
 
+	--work-list-style-dark: radial-gradient(
+		circle at 50% 55%,
+		transparent 0,
+		transparent 35%,
+		rgb(200, 213, 226) 35%,
+		rgb(200, 213, 226) 55%,
+		transparent 55%
+	);
+
 	--ripple-gradient: linear-gradient(
 		45deg,
 		oklch(14.5% 0 0) 0%,
@@ -75,6 +84,17 @@
 		oklch(14.5% 0 0 / 0) 60%,
 		oklch(14.5% 0 0) 74%,
 		oklch(14.5% 0 0) 100%
+	);
+
+	--ripple-gradient-dark: linear-gradient(
+		45deg,
+		oklch(100% 0 0) 0%,
+		oklch(100% 0 0) 30%,
+		oklch(100% 0 0 / 0) 40%,
+		oklch(100% 0 0 / 0) 50%,
+		oklch(100% 0 0 / 0) 60%,
+		oklch(100% 0 0) 74%,
+		oklch(100% 0 0) 100%
 	);
 
 	--ripple-animation: ripple 30s ease-in-out forwards infinite;
@@ -230,16 +250,35 @@ body {
 		0% 0%;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+	.dynamic-background:has(.home-page) {
+		--gradient-color-a: rgb(87, 15, 49);
+		--gradient-color-b: rgb(91, 66, 23);
+		--gradient-color-c: rgba(0, 0, 0, 0);
+		--gradient-color-d: rgba(0, 0, 0, 0);
+	}
+}
+
 .dynamic-background:has(.about-page) {
-	--gradient-color-a: rgba(128, 128, 252, 0);
-	--gradient-color-b: rgba(128, 128, 71, 0.3);
-	--gradient-color-c: rgba(255, 209, 117, 1);
-	--gradient-color-d: rgba(212, 255, 158, 0.9);
+	--gradient-color-a: rgba(255, 209, 117, 0.8);
+	--gradient-color-b: rgba(212, 255, 158, 0.8);
+	--gradient-color-c: rgba(128, 128, 252, 0);
+	--gradient-color-d: rgba(128, 128, 71, 0.3);
 
 	background-position:
-		30% 50%,
-		0% 50%;
+		0% 50%,
+		30% 50%;
 }
+
+@media screen and (prefers-color-scheme: dark) {
+	.dynamic-background:has(.about-page) {
+		--gradient-color-a: rgba(80, 50, 2, 0.9);
+		--gradient-color-b: rgba(35, 62, 5, 0.9);
+		--gradient-color-c: rgba(128, 128, 252, 0);
+		--gradient-color-d: rgba(96, 96, 61, 0.5);
+	}
+}
+
 .dynamic-background:has(.cv-page) {
 	--gradient-color-a: rgba(252, 245, 169, 1);
 	--gradient-color-b: rgba(201, 224, 206, 1);
@@ -247,9 +286,19 @@ body {
 	--gradient-color-d: rgba(128, 128, 158, 0);
 
 	background-position:
-		50% 25%,
+		50% 5%,
 		0% 25%;
 }
+
+@media screen and (prefers-color-scheme: dark) {
+	.dynamic-background:has(.cv-page) {
+		--gradient-color-a: rgb(83, 82, 23);
+		--gradient-color-b: rgb(48, 59, 55);
+		--gradient-color-c: rgba(128, 128, 117, 0);
+		--gradient-color-d: rgba(128, 128, 158, 0);
+	}
+}
+
 .dynamic-background:has(.projects-page) {
 	--gradient-color-a: rgba(178, 252, 218, 0.6);
 	--gradient-color-b: rgba(188, 188, 238, 0.3);
@@ -261,6 +310,15 @@ body {
 		50% 25%;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+	.dynamic-background:has(.projects-page) {
+		--gradient-color-a: rgba(46, 84, 66, 0.6);
+		--gradient-color-b: rgba(55, 55, 80, 0.3);
+		--gradient-color-c: rgba(60, 81, 64, 0.9);
+		--gradient-color-d: rgba(55, 53, 69, 0.9);
+	}
+}
+
 .dynamic-background:has(.not-found-page) {
 	--gradient-color-a: rgba(223, 237, 247, 1);
 	--gradient-color-b: rgba(237, 237, 237, 1);
@@ -270,4 +328,15 @@ body {
 	background-position:
 		20% 80%,
 		50% 50%;
+
+	--custom-gray: rgb(69, 70, 75);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	.dynamic-background:has(.not-found-page) {
+		--gradient-color-a: rgba(51, 59, 64, 0.9);
+		--gradient-color-b: rgb(70, 61, 61, 0.5);
+		--gradient-color-c: rgb(47, 47, 61, 0.9);
+		--gradient-color-d: rgba(50, 52, 37, 0.5);
+	}
 }
